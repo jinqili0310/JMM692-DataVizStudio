@@ -12,8 +12,7 @@ new fullpage("#fullpage", {
     "page #5",
     "page #6",
     "page #7",
-    "page #8",
-    "page #9"
+    "page #8"
   ],
   showActiveTooltip: false,
   slidesNavigation: true,
@@ -26,8 +25,7 @@ new fullpage("#fullpage", {
     "#f2a2e8",
     "#b2cefe",
     "#ffe7d1",
-    "#c299fc",
-    "#8186d5"
+    "#c299fc"
   ]
 });
 
