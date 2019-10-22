@@ -112,6 +112,7 @@ function updateData() {
 
   svg.selectAll("circle").remove();
   svg.selectAll("text").remove();
+  svg.selectAll("g").remove();
 
 var xLabel = svg.append("text")
   .attr("y", height + 50)
@@ -204,6 +205,7 @@ function revertData() {
 
   svg.selectAll("circle").remove();
   svg.selectAll("text").remove();
+  svg.selectAll("g").remove();
 
   var xLabel = svg.append("text")
     .attr("y", height + 50)
