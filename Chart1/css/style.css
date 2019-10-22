@@ -2,10 +2,15 @@
 	margin-left: auto;
     margin-right: auto;
     display: block;
+		color: white;
 }
 
-#logo {
-	height:50px;
+body {
+	background: #464159;
+}
+
+#option {
+	margin: 60px;
 }
 
 .navbar-brand {

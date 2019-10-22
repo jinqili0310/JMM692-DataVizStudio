@@ -35,13 +35,6 @@
     "Character": "Captain America"
   },
   {
-    "Movie": "Marvel's The Avengers",
-    "BoxOffice": 1698515222,
-    "RottenTomatoes%": 0.92,
-    "RottenTomatoes": 92,
-    "Character": "Avengers"
-  },
-  {
     "Movie": "Iron Man 3",
     "BoxOffice": 1338932602,
     "RottenTomatoes%": 0.79,
@@ -68,13 +61,6 @@
     "RottenTomatoes%": 0.84,
     "RottenTomatoes": 84,
     "Character": "Star Lord"
-  },
-  {
-    "Movie": "Avengers: Age of Ultron",
-    "BoxOffice": 1522464832,
-    "RottenTomatoes%": 0.75,
-    "RottenTomatoes": 75,
-    "Character": "Avengers"
   },
   {
     "Movie": "Ant-Man",
@@ -126,13 +112,6 @@
     "Character": "Black Panther"
   },
   {
-    "Movie": "Avengers: Infinity War",
-    "BoxOffice": 2094466308,
-    "RottenTomatoes%": 0.85,
-    "RottenTomatoes": 85,
-    "Character": "Avengers"
-  },
-  {
     "Movie": "Ant-Man and the Wasp",
     "BoxOffice": 636689919,
     "RottenTomatoes%": 0.88,
@@ -147,6 +126,20 @@
     "Character": "Captain Marvel"
   },
   {
+    "Movie": "Spider-Man: Far From Home",
+    "BoxOffice": 1126351975,
+    "RottenTomatoes%": 0.9,
+    "RottenTomatoes": 90,
+    "Character": "Spider-Man"
+  },
+  {
+    "Movie": "Marvel's The Avengers",
+    "BoxOffice": 1698515222,
+    "RottenTomatoes%": 0.92,
+    "RottenTomatoes": 92,
+    "Character": "Avengers"
+  },
+  {
     "Movie": "Avengers: Endgame",
     "BoxOffice": 2796267766,
     "RottenTomatoes%": 0.94,
@@ -154,10 +147,17 @@
     "Character": "Avengers"
   },
   {
-    "Movie": "Spider-Man: Far From Home",
-    "BoxOffice": 1126351975,
-    "RottenTomatoes%": 0.9,
-    "RottenTomatoes": 90,
-    "Character": "Spider-Man"
+    "Movie": "Avengers: Infinity War",
+    "BoxOffice": 2094466308,
+    "RottenTomatoes%": 0.85,
+    "RottenTomatoes": 85,
+    "Character": "Avengers"
+  },
+  {
+    "Movie": "Avengers: Age of Ultron",
+    "BoxOffice": 1522464832,
+    "RottenTomatoes%": 0.75,
+    "RottenTomatoes": 75,
+    "Character": "Avengers"
   }
 ]

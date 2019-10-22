@@ -59,6 +59,8 @@ d3.json("data/Chart1-1.json").then(function(data) {
   // it's invisible and its position/contents are defined during mouseover
   var tooltip = d3.select("#chart-area").append("div")
     .attr("class", "tooltip")
+    .style("background", "#464159")
+    .style("color", "white")
     .style("opacity", 0);
 
   // tooltip mouseover event handler
@@ -83,7 +85,7 @@ d3.json("data/Chart1-1.json").then(function(data) {
       .style("opacity", 0); // don't care about position!
   };
 
-var colorScale = d3.scaleOrdinal(d3.schemeSet2);
+var colorScale = d3.scaleOrdinal(d3.schemeSet3);
 
   // Add dots
   svg.append('g')
@@ -151,6 +153,8 @@ d3.json("data/Chart1-2.json").then(function(data) {
     // it's invisible and its position/contents are defined during mouseover
     var tooltip = d3.select("#chart-area").append("div")
       .attr("class", "tooltip")
+      .style("background", "#464159")
+      .style("color", "white")
       .style("opacity", 0);
 
     // tooltip mouseover event handler
@@ -174,7 +178,7 @@ d3.json("data/Chart1-2.json").then(function(data) {
         .style("opacity", 0); // don't care about position!
     };
 
-  var colorScale = d3.scaleOrdinal(d3.schemeDark2);
+  var colorScale = d3.scaleOrdinal(d3.schemeSet3);
 
     // Add dots
     svg.append('g')
@@ -193,6 +197,8 @@ d3.json("data/Chart1-2.json").then(function(data) {
       .on("mouseover", tipMouseover)
       .on("mouseout", tipMouseout);
 });
+
+d3.selectAll("text").style("fill", "white");
 
 }
 
@@ -245,6 +251,8 @@ function revertData() {
     // it's invisible and its position/contents are defined during mouseover
     var tooltip = d3.select("#chart-area").append("div")
       .attr("class", "tooltip")
+      .style("background", "#464159")
+      .style("color", "white")
       .style("opacity", 0);
 
     // tooltip mouseover event handler
@@ -270,7 +278,7 @@ function revertData() {
         .style("opacity", 0); // don't care about position!
     };
 
-  var colorScale = d3.scaleOrdinal(d3.schemeSet2);
+  var colorScale = d3.scaleOrdinal(d3.schemeSet3);
 
     // Add dots
     svg.append('g')
@@ -289,4 +297,8 @@ function revertData() {
       .on("mouseover", tipMouseover)
       .on("mouseout", tipMouseout);
   });
+
+  d3.selectAll("text").style("fill", "white");
 }
+
+d3.selectAll("text").style("fill", "white");
