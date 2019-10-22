@@ -12,16 +12,7 @@
 
 <body>
 
-  <div id="option">
-      <input name="updateButton"
-             type="button"
-             value="Sort by Movie"
-             onclick="updateData()" />
-      <input name="revertButton"
-             type="button"
-             value="Sort by Character"
-             onclick="revertData()" />
-  </div>
+
 
 
     <!-- <nav class="navbar navbar-default">
@@ -33,12 +24,24 @@
     <!-- Bootstrap grid setup -->
     <div class="container">
         <div class="row">
+          <div id="option">
+              <input name="updateButton"
+                     type="button"
+                     value="Sort by Movie"
+                     onclick="updateData()" />
+              <input name="revertButton"
+                     type="button"
+                     value="Sort by Character"
+                     onclick="revertData()" />
+          </div>
+
+
             <div id="chart-area"></div>
         </div>
     </div>
 
 <!-- External JS libraries -->
-<script src="js/d3.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
 
 <script src="https://d3js.org/d3-color.v1.min.js"></script>
 <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
