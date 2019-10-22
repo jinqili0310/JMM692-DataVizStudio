@@ -174,7 +174,7 @@ d3.json("data/Chart1-2.json").then(function(data) {
         .style("opacity", 0); // don't care about position!
     };
 
-  var colorScale = d3.scaleOrdinal(d3.schemeSet2);
+  var colorScale = d3.scaleOrdinal(d3.schemeDark2);
 
     // Add dots
     svg.append('g')
