@@ -37,7 +37,7 @@ var yLabel = svg.append("text")
   .text("Box Office in Total ($)");
 
 //Read the data
-d3.json("data/Chart1_1.json").then(function(data) {
+d3.json("data/Chart1-1.json").then(function(data) {
   console.log(data);
 
   // Add X axis
@@ -128,7 +128,7 @@ var yLabel = svg.append("text")
   .attr("text-anchor", "middle")
   .text("Box Office ($)");
 
-d3.json("data/Chart1_2.json").then(function(data) {
+d3.json("data/Chart1-2.json").then(function(data) {
   console.log(data);
 
     // Add X axis
@@ -221,7 +221,7 @@ function revertData() {
     .text("Box Office in Total ($)");
 
   //Read the data
-  d3.json("data/Chart1_1.json").then(function(data) {
+  d3.json("data/Chart1-1.json").then(function(data) {
     console.log(data);
 
     // Add X axis
