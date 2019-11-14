@@ -1,14 +1,21 @@
 @import "https://fonts.googleapis.com/css?family=Roboto+Slab";
 
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url("../Fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+}
+
 .section {
   text-align: center;
-  font-size: 3em;
-  font-family: "Roboto Slab", serif;
+  font-size: 4em;
+  font-family: "Avenir Next Regular";
 }
 
 h2,
 p {
+  font-family: "Avenir Next Regular";
   margin: 0;
+  color: white;
 }
 
 p {
@@ -59,7 +66,352 @@ p {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
+}
+
+//
+/* Variables */
+//
+$color-alpha: #47bec7;
+$color-beta: #061c30;
+$color-white: #fff;
+$color-grey: #f8f8f8;
+$color-black: #000;
+$mq-xs: 22em;
+$mq-sm: 32em;
+$mq-md: 54em;
+$mq-lg: 65em;
+$mq-xl: 91em;
+$mq-xxl: 115em;
+$mq-xxxl: 130em;
+$font-body: "Karla", sans-serif;
+$font-small: 0.9em;
+
+//
+/* Mixins */
+//
+@mixin flex-grid($xs, $sm, $md, $lg: null, $xl: null, $pad: 0) {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  margin-left: -$pad;
+  margin-right: -$pad;
+
+  &>* {
+    padding: $pad;
+    flex-basis: 100% / $xs;
+    max-width: 100% / $xs;
+
+    @media (min-width: $mq-sm) {
+      flex-basis: 100% / $sm;
+      max-width: 100% / $sm;
+    }
+
+    @media (min-width: $mq-md) {
+      flex-basis: 100% / $md;
+      max-width: 100% / $md;
+    }
+
+    @if $lg {
+      @media (min-width: $mq-lg) {
+        flex-basis: 100% / $lg;
+        max-width: 100% / $lg;
+      }
+    }
+
+    @if $xl {
+      @media (min-width: $mq-xl) {
+        flex-basis: 100% / $xl;
+        max-width: 100% / $xl;
+      }
+    }
+  }
+}
+
+@mixin link-underline($color: $color-alpha) {
+  position: relative;
+  display: inline-block;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -0.1em;
+    height: 2px;
+    width: 0;
+    background-color: $color;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /*
+   * Add hover to pseudo element
+   * left: 0;
+   * width: 100%
+   */
+}
+
+//
+/* Base */
+//
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: $font-body;
+  font-size: 100%;
+  background-color: $color-grey;
+
+  @media (min-width: $mq-sm) {
+    font-size: 102.5%;
+  }
+
+  @media (min-width: $mq-md) {
+    font-size: 105%;
+  }
+
+  @media (min-width: $mq-lg) {
+    font-size: 107.5%;
+  }
+
+  @media (min-width: 75em) {
+    font-size: 110%;
+  }
+
+  @media (min-width: $mq-xl) {
+    font-size: 115%;
+  }
+
+  @media (min-width: $mq-xxl) {
+    font-size: 120%;
+  }
+
+  @media (min-width: $mq-xxxl) {
+    font-size: 125%;
+  }
+}
+
+h3 {
+  $fontSize: 1.25em;
+
+  margin: {
+    top: 0;
+    bottom: 0.25em;
+  }
+
+  font-size: $fontSize;
+  line-height: 1.1;
+
+  @media (min-width: $mq-xl) {
+    font-size: $fontSize + 0.25em;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+img, figure {
+  display: block;
+  max-width: 1024px;
+  max-height: 1024px;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figure {}
+
+//
+/* Helpers */
+//
+.grid-xlarge {
+  margin: {
+    right: auto;
+    left: auto;
+  }
+
+  @media (min-width: $mq-md) {
+    width: 95%;
+  }
+
+  @media (min-width: $mq-xl) {
+    width: 80%;
+  }
+}
+
+.absolute-bg {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.preloader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3em;
+  width: 3em;
+  margin: auto;
+  border: 2px solid transparent;
+  border-top-color: $color-alpha;
+  border-radius: 50%;
+  opacity: 1;
+  animation: spin 1s linear infinite both;
+  transition: opacity 2s 0.2s ease-out;
+}
+
+//
+/* Keyframes */
+//
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//
+/* Team */
+//
+.team {
+  width: 100%;
+
+  padding: {
+    right: 1em;
+    left: 1em;
+  }
+
+  &__container {
+    @include flex-grid(1, 2, 2, 3, $pad: 1em);
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 1px 1px rgba($color-black, 0.1);
+    transform: translate3d(0, 0, 0);
+    transition: all 1s ease;
+
+    &:hover {
+      border: 1px solid rgba($color-black, 0.1);
+      box-shadow: 0px 0px 47px rgba($color-black, 0.1);
+      transform: translate3d(0, -0.5em, 0);
+
+      &:after {
+        opacity: 1;
+      }
+
+      .team__title:after {
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-clip: padding-box;
+      box-shadow: 0 2px 50px rgba($color-black, 0.2);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+
+  &__header {
+    margin-bottom: 2em;
+    color: $color-alpha;
+    text-align: center;
+  }
+
+  &__img-container {
+    position: relative;
+    background-color: $color-beta;
+  }
+
+  &__img {
+    position: relative;
+    padding-bottom: 100%;
+    animation: fade-in ease-in-out 1s both;
+  }
+
+  &__text {
+    padding: 1em 0.5em;
+    color: $color-black;
+    background-color: $color-white;
+    text-align: center;
+
+    @media (min-width: $mq-sm) {
+      padding: {
+        top: 2em;
+        bottom: 2em;
+      }
+    }
+  }
+
+  &__title {
+    @include link-underline();
+    margin-bottom: 0.35em;
+  }
+
+  &__position {
+    display: block;
+    font-size: $font-small;
+  }
+}
+
+.page3 {
+  background-image: url("../Assets/theme.gif");
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+#floatText {
+  color: white;
+  text-align: center;
+  padding: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  position: relative;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  bottom: 8px;
 }
