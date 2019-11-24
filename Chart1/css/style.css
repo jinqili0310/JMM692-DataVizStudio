@@ -2,7 +2,7 @@
 	margin-left: auto;
     margin-right: auto;
     display: block;
-		color: white;
+		color: black;
 }
 
 body {
@@ -21,6 +21,6 @@ body {
 div.tooltip {
     position: absolute;
     font: 12px sans-serif;
-    background: white;
+    background: black;
     pointer-events: none;
 }

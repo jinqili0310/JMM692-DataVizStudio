@@ -5,8 +5,8 @@ var margin = {
     bottom: 120,
     left: 120
   },
-  width = 720 - margin.left - margin.right,
-  height = 480 - margin.top - margin.bottom;
+  width = 1200 - margin.left - margin.right,
+  height = 800 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#chart-area")
@@ -48,7 +48,7 @@ d3.json("data/Chart1-1.json").then(function(data) {
 
   // Add Y axis
   var y = d3.scaleLinear()
-    .domain([0, 16000000000])
+    .domain([2000000000, 16000000000])
     .range([height, 0]);
   svg.append("g")
     .call(d3.axisLeft(y));
@@ -57,8 +57,8 @@ d3.json("data/Chart1-1.json").then(function(data) {
   // it's invisible and its position/contents are defined during mouseover
   var tooltip = d3.select("#chart-area").append("div")
     .attr("class", "tooltip")
-    .style("background", "black")
-    .style("color", "white")
+    .style("background", "white")
+    .style("color", "black")
     .style("opacity", 0);
 
   // tooltip mouseover event handler
@@ -96,12 +96,12 @@ var defs = nodeEnter.append("defs");
 
 defs.append('pattern')
   .attr("id", function(d) { return "image"+ d.id;}  )
-  .attr("width", 50)
-  .attr("height", 50)
+  .attr("width", 60)
+  .attr("height", 60)
   .append("image")
   .attr("xlink:href", function(d) { return d.image_url;})
-  .attr("width", 50)
-  .attr("height", 50);
+  .attr("width", 60)
+  .attr("height", 60);
 
   nodeEnter.append("circle")
       .attr("cx", function(d) {
@@ -110,10 +110,14 @@ defs.append('pattern')
       .attr("cy", function(d) {
         return y(d.boxOffice);
       })
+      .style("stroke", function(d) {
+        return colorScale(d.character);
+      })
+      .style("stroke-width", 5)
       .attr("fill",function(d) {
         return "url(#image"+ d.id +")";
       })
-      .attr("r", 25)
+      .attr("r", 30)
       .on("mouseover", tipMouseover)
       .on("mouseout", tipMouseout);
    // nodeEnter
@@ -193,8 +197,8 @@ d3.json("data/Chart1-2.json").then(function(data) {
     // it's invisible and its position/contents are defined during mouseover
     var tooltip = d3.select("#chart-area").append("div")
       .attr("class", "tooltip")
-      .style("background", "black")
-      .style("color", "white")
+      .style("background", "white")
+      .style("color", "black")
       .style("opacity", 0);
 
     // tooltip mouseover event handler
@@ -240,7 +244,7 @@ d3.json("data/Chart1-2.json").then(function(data) {
 
 });
 
-d3.selectAll("text").style("fill", "white");
+d3.selectAll("text").style("fill", "black");
 
 }
 
@@ -293,7 +297,7 @@ function revertData() {
     // it's invisible and its position/contents are defined during mouseover
     var tooltip = d3.select("#chart-area").append("div")
       .attr("class", "tooltip")
-      .style("background", "black")
+      .style("background", "white")
       .style("color", "white")
       .style("opacity", 0);
 
@@ -342,7 +346,7 @@ function revertData() {
 
   });
 
-  d3.selectAll("text").style("fill", "white");
+  d3.selectAll("text").style("fill", "black");
 }
 
-d3.selectAll("text").style("fill", "white");
+d3.selectAll("text").style("fill", "black");
