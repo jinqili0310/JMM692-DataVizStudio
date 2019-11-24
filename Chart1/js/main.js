@@ -57,7 +57,7 @@ d3.json("data/Chart1-1.json").then(function(data) {
   // it's invisible and its position/contents are defined during mouseover
   var tooltip = d3.select("#chart-area").append("div")
     .attr("class", "tooltip")
-    .style("background", "white")
+    .style("background", "grey")
     .style("color", "black")
     .style("opacity", 0);
 
