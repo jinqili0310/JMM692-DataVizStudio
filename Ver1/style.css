@@ -2,31 +2,38 @@
 
 @font-face {
   font-family: "Avenir Next Regular";
-  src: url("https://kikijinqili.github.io/Marvel_DataViz/Ver1/Fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("../Fonts/AvenirNextLTPro-Regular.otf") format("opentype");
 }
 
-.section {
+#bootstrap-overrides .section {
   text-align: center;
   font-size: 4em;
   font-family: "Avenir Next Regular";
 }
 
-h2,
-p {
+#bootstrap-overrides h2 {
+  font-size: 7rem;
   font-family: "Avenir Next Regular";
   margin: 0;
   color: white;
 }
 
-p {
-  font-size: 1.2rem;
+#bootstrap-overrides p {
+  font-size: 1.5rem;
+  font-family: "Avenir Next Regular";
+  margin: 0;
+  color: white;
 }
 
-.show-on-scroll {
+#bootstrap-overrides h4 {
+  font-size: 3rem;
+}
+
+#bootstrap-overrides .show-on-scroll {
   transition: 0.6s all ease-in-out;
 }
 
-.slide-left {
+#bootstrap-overrides .slide-left {
   transform: translate3d(100%, 0, 0);
   position: absolute;
   top: 50%;
@@ -34,7 +41,7 @@ p {
   right: 20%;
 }
 
-.slide-right {
+#bootstrap-overrides .slide-right {
   transform: translate3d(-100%, 0, 0);
   position: absolute;
   top: 50%;
@@ -42,11 +49,11 @@ p {
   left: 20%;
 }
 
-.slidein.is-visible {
+#bootstrap-overrides .slidein.is-visible {
   transform: translate3d(0, 0, 0);
 }
 
-.fadein {
+#bootstrap-overrides .fadein {
   opacity: 0;
 
   &.is-visible {
@@ -72,9 +79,8 @@ p {
   }
 }
 
-//
 /* Variables */
-//
+
 $color-alpha: #47bec7;
 $color-beta: #061c30;
 $color-white: #fff;
@@ -87,12 +93,11 @@ $mq-lg: 65em;
 $mq-xl: 91em;
 $mq-xxl: 115em;
 $mq-xxxl: 130em;
-$font-body: "Karla", sans-serif;
+$font-body: "Avenir Next Regular", sans-serif;
 $font-small: 0.9em;
 
-//
 /* Mixins */
-//
+
 @mixin flex-grid($xs, $sm, $md, $lg: null, $xl: null, $pad: 0) {
   display: flex;
   flex-direction: row;
@@ -153,19 +158,18 @@ $font-small: 0.9em;
    */
 }
 
-//
 /* Base */
-//
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
-body {
+#bootstrap-overrides body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  font-family: $font-body;
+  font-family: "Avenir Next Regular";
   font-size: 100%;
   background-color: $color-grey;
 
@@ -198,7 +202,7 @@ body {
   }
 }
 
-h3 {
+#bootstrap-overrides h3 {
   $fontSize: 1.25em;
 
   margin: {
@@ -214,11 +218,11 @@ h3 {
   }
 }
 
-a {
+#bootstrap-overrides a {
   text-decoration: none;
 }
 
-img, figure {
+#bootstrap-overrides img{
   display: block;
   max-width: 1024px;
   max-height: 1024px;
@@ -228,12 +232,19 @@ img, figure {
   margin-right: auto;
 }
 
-figure {}
+#bootstrap-overrides figure {
+  display: block;
+  max-width: 1024px;
+  max-height: 1024px;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-//
 /* Helpers */
-//
-.grid-xlarge {
+
+#bootstrap-overrides .grid-xlarge {
   margin: {
     right: auto;
     left: auto;
@@ -248,7 +259,7 @@ figure {}
   }
 }
 
-.absolute-bg {
+#bootstrap-overrides .absolute-bg {
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -259,7 +270,7 @@ figure {}
   overflow: hidden;
 }
 
-.preloader {
+#bootstrap-overrides .preloader {
   position: absolute;
   top: 0;
   right: 0;
@@ -276,9 +287,8 @@ figure {}
   transition: opacity 2s 0.2s ease-out;
 }
 
-//
 /* Keyframes */
-//
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -295,10 +305,9 @@ figure {}
   }
 }
 
-//
 /* Team */
-//
-.team {
+
+#bootstrap-overrides .team {
   width: 100%;
 
   padding: {
@@ -394,24 +403,321 @@ figure {}
   }
 }
 
-.page3 {
-  background-image: url("https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/theme.gif");
+#bootstrap-overrides .page3 {
+  background-image: url("../Assets/theme.gif");
   background-repeat: no-repeat;
-  height: 100%;
+  height: 100vh;
   background-position: center;
   background-size: cover;
 }
 
 #floatText {
   color: white;
-  text-align: center;
-  padding: 4px;
+  text-align: left;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 50%;
   position: relative;
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.5);
   z-index: 1;
-  bottom: 8px;
+  /* bottom: 8px; */
+}
+
+#floatText p {
+  font-size: 1.8rem;
+  padding: 4px;
+}
+
+@import "compass/css3";
+
+#bootstrap-overrides .flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+
+  position: absolute;
+  top: 0;
+}
+
+#bootstrap-overrides .flex-item {
+  position: relative;
+  top: 0;
+  padding: 0;
+  width: 10%;
+  height: auto;
+  margin-top: 0;
+}
+
+#bootstrap-overrides .portrait {
+  max-width: 10vw;
+  max-height: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+#bootstrap-overrides .name {
+  color: white;
+  font-size: 4rem;
+}
+
+#bootstrap-overrides .paragraph {
+  color: white;
+  font-size: 2rem;
+  padding: 0 10vh;
+  text-align: left;
+}
+
+#bootstrap-overrides .introContainer {
+  margin-top: 11vh;
+  position: relative;
+  background-position: 50%;
+  overflow: hidden;
+  height: 80vh;
+}
+
+#bootstrap-overrides .charGif {
+  margin-bottom: 1vh;
+  max-height: 33vh;
+  height: auto;
+}
+
+#bootstrap-overrides .charIntro {
+  margin: 0;
+  position: absolute;
+  top: 8vh;
+  width: 100vw;
+
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#bootstrap-overrides .arrow {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin: 3vh 25vw;
+}
+
+/* .section SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.section {
+  padding: 0;
+}
+
+.section .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section h1 {
+  font-size: 2.5rem;
+}
+
+.section h2 {
+  font-size: 1.3rem;
+}
+
+#page5 {
+  padding-top: 0;
+}
+
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#bootstrap-overrides .timeline {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.timeline ol {
+  font-size: 0;
+  width: 100vw;
+  padding: 250px 0;
+  transition: all 1s;
+}
+
+.timeline ol li {
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  width: 160px;
+  height: 3px;
+  background: #fff;
+}
+
+.timeline ol li:last-child {
+  width: 280px;
+}
+
+.timeline ol li:not(:first-child) {
+  margin-left: 14px;
+}
+
+.timeline ol li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1px);
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.timeline ol li div {
+  position: absolute;
+  left: calc(16%);
+  width: 280px;
+  padding: 15px;
+  font-size: 1rem;
+  white-space: normal;
+  color: #ffffff;
+  background: #000000;
+}
+
+.timeline ol li:nth-child(odd) div {
+  top: -16px;
+  transform: translateY(-100%);
+}
+
+.timeline ol li:nth-child(odd) div::before {
+  top: 100%;
+  border-width: 8px 8px 0 0;
+  border-color: white transparent transparent transparent;
+}
+
+.timeline ol li:nth-child(even) div {
+  top: calc(100% + 16px);
+}
+
+.timeline ol li:nth-child(even) div::before {
+  top: -8px;
+  border-width: 8px 0 0 8px;
+  border-color: transparent transparent transparent white;
+}
+
+.timeline time {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+
+/* TIMELINE ARROWS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline .arrows {
+  display: flex;
+  justify-content: center;
+}
+
+.timeline .arrows .arrow__prev {
+  margin-right: 20px;
+}
+
+.timeline .disabled {
+  opacity: .5;
+}
+
+.timeline .arrows img {
+  width: 45px;
+  height: 45px;
+}
+
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (max-width: 599px) {
+  .timeline ol,
+  .timeline ol li {
+    width: auto;
+  }
+
+  .timeline ol {
+    padding: 0;
+    transform: none !important;
+  }
+
+  .timeline ol li {
+    display: block;
+    height: auto;
+    background: transparent;
+  }
+
+  .timeline ol li:first-child {
+    margin-top: 25px;
+  }
+
+  .timeline ol li:not(:first-child) {
+    margin-left: auto;
+  }
+
+  .timeline ol li div {
+    width: 94%;
+    height: auto !important;
+    margin: 0 auto 25px;
+  }
+
+  .timeline ol li div {
+    position: static;
+  }
+
+  .timeline ol li:nth-child(odd) div {
+    transform: none;
+  }
+
+  .timeline ol li:nth-child(odd) div::before,
+  .timeline ol li:nth-child(even) div::before {
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border: none;
+    border-left: 1px solid white;
+    height: 25px;
+  }
+
+  .timeline ol li:last-child,
+  .timeline ol li:nth-last-child(2) div::before,
+  .timeline ol li:not(:last-child)::after,
+  .timeline .arrows {
+    display: none;
+  }
+}
+
+#bootstrap-overrides .timeTitle {
+  color: white;
+  padding-bottom: 4vh;
+}
+
+#bootstrap-overrides .timeItem {
+  height: auto !important;
+}
+
+#CAintro .charGif {
+  margin: 4vw auto 2vw auto;
 }

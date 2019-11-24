@@ -17,6 +17,8 @@ var svg = d3.select("#chart-area")
   .attr("transform",
     "translate(" + margin.left + "," + margin.top + ")");
 
+
+
 //Chart1-1
 
 var xLabel = svg.append("text")
@@ -57,7 +59,7 @@ d3.json("data/Chart1-1.json").then(function(data) {
   // it's invisible and its position/contents are defined during mouseover
   var tooltip = d3.select("#chart-area").append("div")
     .attr("class", "tooltip")
-    .style("background", "black")
+    .style("background", "#464159")
     .style("color", "white")
     .style("opacity", 0);
 
@@ -85,64 +87,22 @@ d3.json("data/Chart1-1.json").then(function(data) {
 
 var colorScale = d3.scaleOrdinal(d3.schemeSet3);
 
-var node = svg.selectAll("g.node")
-    .data(data, function(d) { return d.character; });
-
-var nodeEnter = node.enter()
-    .append("g")
-    .attr("class", "node");
-
-var defs = nodeEnter.append("defs");
-
-defs.append('pattern')
-  .attr("id", function(d) { return "image"+ d.id;}  )
-  .attr("width", 50)
-  .attr("height", 50)
-  .append("image")
-  .attr("xlink:href", function(d) { return d.image_url;})
-  .attr("width", 50)
-  .attr("height", 50);
-
-  nodeEnter.append("circle")
-      .attr("cx", function(d) {
-        return x(d.rottenTomatoes);
-      })
-      .attr("cy", function(d) {
-        return y(d.boxOffice);
-      })
-      .attr("fill",function(d) {
-        return "url(#image"+ d.id +")";
-      })
-      .attr("r", 25)
-      .on("mouseover", tipMouseover)
-      .on("mouseout", tipMouseout);
-   // nodeEnter
-   //  .append("text")
-   //    .attr("x", d => xScale(d.height))
-   //    .attr("y", d => yScale(d.age) + 10)
-   //    .attr("fill", "white")
-   //    .text(d => d.name);
-
-  return svg.node();
-
   // Add dots
-  // svg.append('g')
-  //   .selectAll("dot")
-  //   .data(data)
-  //   .enter()
-  //   .append("circle")
-  //   .attr("cx", function(d) {
-  //     return x(d.rottenTomatoes);
-  //   })
-  //   .attr("cy", function(d) {
-  //     return y(d.boxOffice);
-  //   })
-  //   .attr("r", 10)
-  //   .style("fill", "white")
-    // .style("fill", function(d) { return colorScale(d.character); })
-    // .on("mouseover", tipMouseover)
-    // .on("mouseout", tipMouseout);
-
+  svg.append('g')
+    .selectAll("dot")
+    .data(data)
+    .enter()
+    .append("circle")
+    .attr("cx", function(d) {
+      return x(d.rottenTomatoes);
+    })
+    .attr("cy", function(d) {
+      return y(d.boxOffice);
+    })
+    .attr("r", 10)
+    .style("fill", function(d) { return colorScale(d.character); })
+    .on("mouseover", tipMouseover)
+    .on("mouseout", tipMouseout);
 });
 
 
@@ -193,7 +153,7 @@ d3.json("data/Chart1-2.json").then(function(data) {
     // it's invisible and its position/contents are defined during mouseover
     var tooltip = d3.select("#chart-area").append("div")
       .attr("class", "tooltip")
-      .style("background", "black")
+      .style("background", "#464159")
       .style("color", "white")
       .style("opacity", 0);
 
@@ -218,7 +178,7 @@ d3.json("data/Chart1-2.json").then(function(data) {
         .style("opacity", 0); // don't care about position!
     };
 
-  // var colorScale = d3.scaleOrdinal(d3.schemeSet3);
+  var colorScale = d3.scaleOrdinal(d3.schemeSet3);
 
     // Add dots
     svg.append('g')
@@ -226,7 +186,6 @@ d3.json("data/Chart1-2.json").then(function(data) {
       .data(data)
       .enter()
       .append("circle")
-      .style("fill", "green")
       .attr("cx", function(d) {
         return x(d.RottenTomatoes);
       })
@@ -234,10 +193,9 @@ d3.json("data/Chart1-2.json").then(function(data) {
         return y(d.BoxOffice);
       })
       .attr("r", 5)
-      // .style("fill", function(d) { return colorScale(d.Character); })
+      .style("fill", function(d) { return colorScale(d.Character); })
       .on("mouseover", tipMouseover)
       .on("mouseout", tipMouseout);
-
 });
 
 d3.selectAll("text").style("fill", "white");
@@ -293,7 +251,7 @@ function revertData() {
     // it's invisible and its position/contents are defined during mouseover
     var tooltip = d3.select("#chart-area").append("div")
       .attr("class", "tooltip")
-      .style("background", "black")
+      .style("background", "#464159")
       .style("color", "white")
       .style("opacity", 0);
 
@@ -338,8 +296,6 @@ function revertData() {
       .style("fill", function(d) { return colorScale(d.character); })
       .on("mouseover", tipMouseover)
       .on("mouseout", tipMouseout);
-
-
   });
 
   d3.selectAll("text").style("fill", "white");

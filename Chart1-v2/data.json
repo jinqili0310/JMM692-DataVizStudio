@@ -1,0 +1,134 @@
+[
+    {
+      "film": "Iron Man",
+      "tomato": "93%",
+      "character": "Iron Man",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/ironMan.png"
+    },
+    {
+      "film": "The Incredible Hulk",
+      "tomato": "67%",
+      "character": "Hulk",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/hulk.png"
+    },
+    {
+      "film": "Iron Man 2",
+      "tomato": "73%",
+      "character": "Iron Man",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/ironMan.png"
+    },
+    {
+      "film": "Thor",
+      "tomato": "77%",
+      "character": "Thor",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/thor.png"
+    },
+    {
+      "film": "Captain America: The First Avenger",
+      "tomato": "80%",
+      "character": "Captain America",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/captainAmerica.png"
+    },
+    {
+      "film": "Marvel's The Avengers",
+      "tomato": "92%",
+      "character": "Avengers",
+      "image_url": ""
+    },
+    {
+      "film": "Iron Man 3",
+      "tomato": "79%",
+      "character": "Iron Man",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/ironMan.png"
+    },
+    {
+      "film": "Thor: The Dark World",
+      "tomato": "67%",
+      "character": "Thor",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/thor.png"
+    },
+    {
+      "film": "Captain America: The Winter Soldier",
+      "tomato": "90%",
+      "character": "Captain America",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/captainAmerica.png"
+    },
+    {
+      "film": "Guardians of the Galaxy",
+      "tomato": "84%",
+      "character": "Star Lord",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/starLord.png"
+    },
+    {
+      "film": "Avengers: Age of Ultron",
+      "tomato": "75%",
+      "character": "Avengers",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/starLord.png"
+    },
+    {
+      "film": "Ant-Man",
+      "tomato": "83%",
+      "character": "Ant-Man",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/starLord.png"
+    },
+    {
+      "film": "Captain America: Civil War",
+      "tomato": "91%",
+      "character": "Captain America",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/captainAmerica.png"
+    },
+    {
+      "film": "Doctor Strange",
+      "tomato": "89%",
+      "character": "Doctor Strange",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/starLord.png"
+    },
+    {
+      "film": "Guardians of the Galaxy Vol. 2",
+      "tomato": "84%",
+      "character": "Star Lord",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/starLord.png"
+    },
+    {
+      "film": "Spider-Man: Homecoming",
+      "tomato": "92%",
+      "character": "Spider-Man",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/spiderMan.png"
+    },
+    {
+      "film": "Thor: Ragnarok",
+      "tomato": "93%",
+      "character": "Thor",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/thor.png"
+    },
+    {
+      "film": "Black Panther",
+      "tomato": "96%",
+      "character": "Black Panther",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/spiderMan.png"
+    },
+    {
+      "film": "Avengers: Infinity War",
+      "tomato": "85%",
+      "character": "Avengers",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/spiderMan.png"
+    },
+    {
+      "film": "Ant-Man and the Wasp",
+      "tomato": "88%",
+      "character": "Ant-Man",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/spiderMan.png"
+    },
+    {
+      "film": "Captain Marvel",
+      "tomato": "78%",
+      "character": "Captain Marvel",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/spiderMan.png"
+    },
+    {
+      "film": "Avengers: Endgame",
+      "tomato": "94%",
+      "character": "Avengers",
+      "image_url": "https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/spiderMan.png"
+    }
+  ]

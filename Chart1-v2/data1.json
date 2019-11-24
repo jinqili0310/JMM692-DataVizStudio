@@ -1,0 +1,254 @@
+{
+  "include": [
+    {
+      "name": "Harvey Weinstein",
+      "industry": "Entertainment",
+      "accuse_date": "9-05-2017",
+      "image_url": " "
+    },
+    {
+      "name": "Andy Signore",
+      "industry": "Media",
+      "accuse_date": "11-06-2017",
+      "image_url": " "
+    },
+    {
+      "name": "Ben Affleck",
+      "industry": "Entertainment",
+      "accuse_date": "11-10-2017",
+      "article_link": "https://twitter.com/HilarieBurton/status/917898877663096832",
+      "image_url": " "
+    },
+    {
+      "name": "Roy Price",
+      "industry": "Business",
+      "accuse_date": "10-12-2017",
+      "news_outlet": "The Hollywood Reporter",
+      "article_link": "https://www.hollywoodreporter.com/news/amazon-tv-producer-goes-public-harassment-claim-top-exec-roy-price-1048060",
+      "image_url": " ",
+      "title": "Amazon Studios president",
+      "accusation": "Accused of sexually harassing a producer of \"The Man in the High Castle.\"",
+      "result": "Resigned."
+    },
+    {
+      "name": "Oliver Stone",
+      "industry": "Entertainment",
+      "accuse_date": "10-13-2017",
+      "news_outlet": "The Hollywood Reporter",
+      "article_link": "https://www.hollywoodreporter.com/news/oliver-stone-accused-groping-tv-actress-early-1990s-1048468",
+      "image_url": " ",
+      "title": "Hollywood filmmaker ",
+      "accusation": "Accused of groping a woman, and embarassing another women in a \"horrid\" audition. ",
+      "result": "Stone denied wrongdoing in the audition, and hasn't spoken on the groping. "
+    },
+    {
+      "name": "Bob Weinstein",
+      "industry": "Entertainment",
+      "accuse_date": "10-17-2017",
+      "news_outlet": "Variety",
+      "article_link": "http://variety.com/2017/tv/news/bob-weinstein-sexual-harassment-1202592165/",
+      "image_url": " ",
+      "title": "Hollywood producer ",
+      "accusation": "Executive producer of \"The Mist\" accused him of harassment. ",
+      "result": "Weinstein denied the allegation. "
+    },
+    {
+      "name": "Lockhart Steele",
+      "industry": "Media",
+      "accuse_date": "10-19-2017",
+      "news_outlet": "The Awl",
+      "article_link": "https://www.theawl.com/2017/10/lockhart-steele-fired-from-vox-media/",
+      "image_url": " ",
+      "title": "Vox Media editorial director",
+      "accusation": "Eden Rohatensky, a former Vox web developer, accused \"one of the company's VPs\" of sexual misconduct. Vox said Steele, their editorial director,admitted to it.\")",
+      "result": "Fired. "
+    },
+    {
+      "name": "Robert Scoble",
+      "industry": "Tech",
+      "accuse_date": "10-19-2017",
+      "news_outlet": "Quinn Norton on Medium",
+      "article_link": "https://medium.com/@quinnnorton/robert-scoble-and-me-9b14ee92fffb",
+      "image_url": " ",
+      "title": "Tech blogger ",
+      "accusation": "Accused by multiple women of sexual misconduct. ",
+      "result": "Resigned. "
+    },
+    {
+      "name": "David Blaine",
+      "industry": "Entertainment",
+      "accuse_date": "10-19-2017",
+      "news_outlet": "The Daily Beast",
+      "article_link": "https://www.thedailybeast.com/exclusive-former-model-accuses-david-blaine-of-rape",
+      "image_url": " ",
+      "title": "Magician ",
+      "accusation": "Accused by one woman of rape, and another for sexual assault.",
+      "result": "He has denied the allegations. "
+    },
+    {
+      "name": "Gilbert Rozon",
+      "industry": "Business",
+      "accuse_date": "10-19-2017",
+      "news_outlet": "Le Devoir",
+      "article_link": "http://www.ledevoir.com/societe/actualites-en-societe/510755/gilbert-rozon-demission",
+      "image_url": " ",
+      "title": "Comedy festival founder ",
+      "accusation": "Several women accuse Rozon of sexual misconduct and aggression.",
+      "result": "Rozon steps down as head of the Just for Laughs festival. "
+    },
+    {
+      "name": "Chris Savino",
+      "industry": "Entertainment",
+      "accuse_date": "10-19-2017",
+      "news_outlet": "The Hollywood Reporter",
+      "article_link": "https://www.hollywoodreporter.com/live-feed/nickelodeon-fires-loud-house-creator-sexual-harassment-allegations-1050485",
+      "image_url": " ",
+      "title": "Television show creator",
+      "accusation": "At least 12 women allege sexual harassment and inappropriate behavior.",
+      "result": "Fired from Nickelodeon."
+    },
+    {
+      "name": "Twiggy Ramirez",
+      "industry": "Music",
+      "accuse_date": "10-20-2017",
+      "news_outlet": "Jessicka Addams via Facebook",
+      "article_link": "https://www.facebook.com/MissJessickaAddams/posts/10155413298828005",
+      "image_url": " ",
+      "title": "Bassist and guitarist for Marilyn Manson ",
+      "accusation": "Accused of rape and abuse by former girlfriend, Jessicka Adams. ",
+      "result": "Dropped by Marilyn Manson. "
+    },
+    {
+      "name": "Zain Jaffer",
+      "industry": "Tech",
+      "accuse_date": "10-20-2017",
+      "news_outlet": "San Francisco Chronicle",
+      "article_link": "http://www.sfgate.com/bayarea/article/San-Francisco-startup-CEO-charged-with-attempted-12294490.php",
+      "image_url": " ",
+      "title": "CEO of the startup, Vungle",
+      "accusation": "Arrested for assaulting and sexually abusing his 3-year-old son.",
+      "result": "Fired, charged with several felony counts. "
+    },
+    {
+      "name": "James Toback",
+      "industry": "Entertainment",
+      "accuse_date": "10-22-2017",
+      "news_outlet": "The Los Angeles Times",
+      "article_link": "http://www.latimes.com/entertainment/la-et-mn-james-toback-sexual-harassment-allegations-20171018-story.html",
+      "image_url": " ",
+      "title": "Director",
+      "accusation": "Accused by more than 300 women for sexual harassment.",
+      "result": "Toback denied the allegations to the L.A. Times."
+    },
+    {
+      "name": "Terry Richardson",
+      "industry": "Media",
+      "accuse_date": "10-23-2017",
+      "news_outlet": "The Telegraph",
+      "article_link": "http://www.telegraph.co.uk/news/2017/10/23/exclusive-terry-richardson-banned-working-vogue-leading-mags/",
+      "image_url": " ",
+      "title": "Fashion photographer ",
+      "accusation": "Accused of sexual misconduct and sexual exploitation of models. ",
+      "result": "Denied the allegations, was dropped by Condé Nast International. "
+    },
+    {
+      "name": "Leon Wieseltier ",
+      "industry": "Media",
+      "accuse_date": "10-24-2017",
+      "news_outlet": "Politico",
+      "article_link": "https://www.politico.com/story/2017/10/24/leon-wieseltier-new-republic-emerson-collective-workplace-conduct-244120",
+      "image_url": " ",
+      "title": "Former literary editor at The New Republic",
+      "accusation": "Several former New Republic employees allege sexual harassment.",
+      "result": "Backers pulled the plug on his new magazine."
+    },
+    {
+      "name": "Ethan Kath",
+      "industry": "Music",
+      "accuse_date": "10-24-2017",
+      "news_outlet": "Alice Glass via Twitter",
+      "article_link": "https://twitter.com/ALICEGLASS/status/922875671021436928?ref_src=twsrc%5Etfw&ref_url=http%3A%2F%2Fwww.complex.com%2Fmusic%2F2017%2F10%2Falice-glass-crystal-castles-ethan-kath-sexual-abuse",
+      "image_url": " ",
+      "title": "Co-founder of the band Crystal Castles ",
+      "accusation": "Former singer, Alice Glass, accused him of rape and abuse.",
+      "result": "Suing Glass for defamation. "
+    },
+    {
+      "name": "Knight Landesman",
+      "industry": "Media",
+      "accuse_date": "9-25-2017",
+      "news_outlet": "The New York Times",
+      "article_link": "https://www.nytimes.com/2017/10/25/nyregion/knight-landesman-artforum-sexual-harassment-lawsuit.html",
+      "image_url": " ",
+      "title": "Publisher of Artforum magazine ",
+      "accusation": "Sued by at least 9 women for sexual harassment.",
+      "result": "Resigned."
+    },
+    {
+      "name": "George H.W. Bush",
+      "industry": "Politics",
+      "accuse_date": "9-25-2017",
+      "news_outlet": "Heather Lind via instagram",
+      "article_link": "http://www.businessinsider.com/george-h-w-bush-apologises-to-heather-lind-over-sexual-assault-claim-2017-10",
+      "image_url": " ",
+      "title": "41st President of the United States",
+      "accusation": "Accused of inappropriate touching by several women. ",
+      "result": "Apologized through his spokesman."
+    },
+    {
+      "name": "Mark Halperin",
+      "industry": "Media",
+      "accuse_date": "10-26-2017",
+      "news_outlet": "CNN",
+      "article_link": "http://money.cnn.com/2017/10/25/media/mark-halperin-sexual-harassment-allegations/index.html",
+      "image_url": " ",
+      "title": "Political journalist, \"Game Change\" co-author",
+      "accusation": "Accused of sexual harassment while political director of ABC News by 5 women.",
+      "result": "Dropped by NBC and MSNBC, book deal cancelled, HBO miniseries scrapped."
+    },
+    {
+      "name": "John Besh",
+      "industry": "Business",
+      "accuse_date": "10-26-2017",
+      "news_outlet": "The Times-Picayune",
+      "article_link": "http://www.nola.com/business/index.ssf/2017/10/john_besh_restaurants_fostered.html",
+      "image_url": " ",
+      "title": "Chef",
+      "accusation": "25 women alleged that the chef fostered a culture of sexual harassment.",
+      "result": "Stepped down from restaurant company."
+    },
+    {
+      "name": "Ken Baker",
+      "industry": "Media",
+      "accuse_date": "10-26-2017",
+      "news_outlet": "The Wrap",
+      "article_link": "http://variety.com/2017/tv/news/ken-baker-e-sexual-harassment-allegations-1202600640/",
+      "image_url": " ",
+      "title": "Senior E! News correspondent ",
+      "accusation": "2 women allege sexual harassment.",
+      "result": "Under investigation by NBCUniversal. "
+    },
+    {
+      "name": "Rick Najera",
+      "industry": "Media",
+      "accuse_date": "10-26-2017",
+      "news_outlet": "Variety",
+      "article_link": "http://variety.com/2017/tv/news/cbs-diversity-showcase-director-rick-najera-exits-harassment-allegations-1202600365/",
+      "image_url": " ",
+      "title": "Writer and producer ",
+      "accusation": "Accused of making inappropriate comments.",
+      "result": "Fired."
+    },
+    {
+      "name": " ",
+      "industry": "Media",
+      "accuse_date": "11-10-2017",
+      "news_outlet": "Variety",
+      "article_link": "http://variety.com/2017/tv/news/cbs-diversity-showcase-director-rick-najera-exits-harassment-allegations-1202600365/",
+      "image_url": " ",
+      "title": "Writer and producer ",
+      "accusation": "Accused of making inappropriate comments.",
+      "result": "Fired."
+    }
+  ]
+}

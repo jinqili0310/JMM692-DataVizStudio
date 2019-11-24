@@ -1,0 +1,52 @@
+[
+  {
+    "character": "Iron Man",
+    "boxOffice": "14165285132",
+    "rottenTomatoes": "91"
+  },
+  {
+    "character": "Hulk",
+    "boxOffice": "9320390336",
+    "rottenTomatoes": "89"
+  },
+  {
+    "character": "Thor",
+    "boxOffice": "10954580343",
+    "rottenTomatoes": "87"
+  },
+  {
+    "character": "Captain America",
+    "boxOffice": "12738140591",
+    "rottenTomatoes": "88"
+  },
+  {
+    "character": "Star Lord",
+    "boxOffice": "6634240074",
+    "rottenTomatoes": "85"
+  },
+  {
+    "character": "Ant-Man",
+    "boxOffice": "5229327815",
+    "rottenTomatoes": "90"
+  },
+  {
+    "character": "Doctor Strange",
+    "boxOffice": "7046496646",
+    "rottenTomatoes": "92"
+  },
+  {
+    "character": "Spider-Man",
+    "boxOffice": "8172848621",
+    "rottenTomatoes": "91"
+  },
+  {
+    "character": "Black Panther",
+    "boxOffice": "7501767720",
+    "rottenTomatoes": "93"
+  },
+  {
+    "character": "Captain Marvel",
+    "boxOffice": "3924542560",
+    "rottenTomatoes": "86"
+  }
+]

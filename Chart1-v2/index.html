@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <style>
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      margin: 0;
+    }
+
+    #chart1 {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .circle {
+      pointer-events: none;
+    }
+
+    .circle-bg {
+      stroke: steelblue;
+      fill: steelblue;
+      fill-opacity: .3;
+      pointer-events: none;
+    }
+
+    .circle-hover {
+      opacity: 0;
+    }
+
+    .axis .domain {
+      display: none;
+    }
+
+    .axis text {
+      font-size: 1.2em;
+    }
+
+    .axis.y.right .tick text {
+      fill: steelblue;
+    }
+
+    .axis.y .tick line {
+      stroke: #eee;
+      stroke-width: 10px;
+    }
+
+    .axis.x .tick line {
+      stroke: #ccc;
+    }
+
+    .tip {
+      position: absolute;
+      font-size: .8em;
+      text-align: center;
+      text-shadow: -1px -1px 1px #ffffff, -1px 0px 1px #ffffff, -1px 1px 1px #ffffff, 0px -1px 1px #ffffff, 0px 1px 1px #ffffff, 1px -1px 1px #ffffff, 1px 0px 1px #ffffff, 1px 1px 1px #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="chart1"></div>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://unpkg.com/d3-moveto@0.0.3/build/d3-moveto.min.js"></script>
+  <script src="https://unpkg.com/jeezy@1.12.13/lib/jeezy.min.js"></script>
+  <script>
+    var radius = 12;
+
+    var margin = {
+        top: 30,
+        right: 30,
+        bottom: 120,
+        left: 120
+      },
+      width = 720 - margin.left - margin.right,
+      height = 480 - margin.top - margin.bottom;
+
+    var svg = d3.select("#chart1").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
+
+    // append the tip
+    var tip = d3.select("#wrapper").append("div")
+      .attr("class", "tip");
+
+    var x = d3.scaleTime()
+      .rangeRound([0, width]);
+
+    var y = d3.scaleBand()
+      .rangeRound([0, height]);
+
+    var xLabel = svg.append("text")
+      .attr("y", height + 50)
+      .attr("x", width / 2)
+      .attr("font-size", "20px")
+      .attr("text-anchor", "middle")
+      .text("Median Score on Rotten Tomatoes (%)");
+
+    var yLabel = svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -100)
+      .attr("x", -170)
+      .attr("font-size", "20px")
+      .attr("text-anchor", "middle")
+      .text("Box Office in Total ($)");
+
+    d3.json("data.json", function(error, data) {
+      if (error) throw error;
+
+      data = data.include;
+
+       var character = jz.arr.sortBy(jz.arr.pivot(data, "character"), "count", "desc");
+      y.domain(characters.map(function(d) {
+        return d.value;
+      }));
+
+      x_axis.tickSizeInner(-height + y.bandwidth() / 2 - 3)
+
+      // svg.append("g")
+      //   .attr("class", "axis y right")
+      //   .attr("transform", "translate(" + width + ", 0)")
+      //   .call(y_axis_right.tickFormat(function(d) {
+      //     return characters.filter(function(c) {
+      //       return c.value == d
+      //     })[0].count;
+      //   }))
+      //   .selectAll(".tick text")
+      //   .attr("dx", radius);
+      //
+      // svg.append("g")
+      //   .attr("class", "axis x")
+      //   .attr("transform", "translate(0, " + height + ")")
+      //   .call(x_axis)
+      //   .selectAll(".tick line")
+      //   .style("display", function(d) {
+      //     var s = d.toString().split(" ");
+      //
+      //   });
+      //
+      // // images
+      // var img = defs.selectAll("pattern")
+      //   .data(data, function(d) {
+      //     return;
+      //   })
+      //   .enter().append("pattern")
+      //   .attr("id", function(d) {
+      //     return;
+      //   })
+      //   .attr("x", "0%")
+      //   .attr("y", "0%")
+      //   .attr("height", "100%")
+      //   .attr("width", "100%")
+      //   .attr("viewBox", "0 0 " + radius + " " + radius)
+      //   .append("image")
+      //   .attr("x", "0%")
+      //   .attr("y", "0%")
+      //   .attr("width", radius)
+      //   .attr("height", radius)
+      //   .attr("xlink:href", function(d) {
+      //     return;
+      //   })
+      //
+      // forceSim();
+      //
+      // draw();
+      //
+      // window.addEventListener("resize", function() {
+      //
+      //   // all of these things need to be updated on resize
+      //   width = +jz.str.keepNumber(d3.select("#chart1").style("width")) - margin.left - margin.right;
+      //
+      //   d3.select(".axis.y.right").attr("transform", "translate(" + width + ", 0)").call(y_axis_right.tickSizeInner(-width));
+      //
+      //   x.rangeRound([0, width]);
+      //
+      //   forceSim();
+      //
+      //   d3.select(".x.axis")
+      //     .call(x_axis);
+      //
+      //   draw();
+      // });
+      //
+      // function draw() {
+      //
+      //   // circle
+      //   var circle = svg.selectAll(".circle")
+      //     .data(function(d) {
+      //       return;
+      //     });
+      //
+      //   circle.enter().append("circle")
+      //     .attr("class", function(d) {
+      //       return;
+      //     })
+      //     .attr("r", radius)
+      //     .style("fill", function(d) {
+      //       return;
+      //     })
+      //     .merge(circle)
+      //     .attr("cx", function(d) {
+      //       return d ? d.data.x : null;
+      //     })
+      //     .attr("cy", function(d) {
+      //       return d ? d.data.y : null;
+      //     });
+      //
+      //   // background
+      //   var bg_circle = svg.selectAll(".circle-bg")
+      //     .data(function(d) {
+      //       return;
+      //     });
+      //
+      //   bg_circle.enter().append("circle")
+      //     .attr("class", function(d) {
+      //       return;
+      //     })
+      //     .attr("r", radius)
+      //     .merge(bg_circle)
+      //     .attr("cx", function(d) {
+      //       return d ? d.data.x : null;
+      //     })
+      //     .attr("cy", function(d) {
+      //       return d ? d.data.y : null;
+      //     });
+      //
+      //   // hover
+      //   var hover_circle = svg.selectAll(".circle-hover")
+      //     .data(function(d) {
+      //       return;
+      //     });
+      //
+      //   hover_circle.enter().append("circle")
+      //     .attr("class", function(d) {
+      //       return;
+      //     })
+      //     .attr("r", radius)
+      //     .merge(hover_circle)
+      //     .attr("cx", function(d) {
+      //       return d ? d.data.x : null;
+      //     })
+      //     .attr("cy", function(d) {
+      //       return d ? d.data.y : null;
+      //     });
+      //
+      //   svg.selectAll(".circle-hover").on("mouseover", function(d) {
+      //
+      //     tip.html(d.data.name);
+      //
+      //     var tip_width = +jz.str.keepNumber(tip.style("width"));
+      //     var tip_height = +jz.str.keepNumber(tip.style("height"));
+      //
+      //     var circle_node = d3.select(this).node().getBoundingClientRect();
+      //     var circle_left = circle_node.left;
+      //     var circle_top = circle_node.top;
+      //
+      //     var tip_left = circle_left - tip_width / 2 + radius;
+      //     var tip_top = circle_top - radius * 1.5 - tip_height;
+      //
+      //     tip
+      //       .style("left", tip_left + "px")
+      //       .style("top", tip_top + "px");
+      //
+      //   }).on("mouseout", function(d) {
+      //     d3.select(".circle-" + ).attr("r", radius);
+      //     d3.select(".circle-bg-" + ).style("fill-opacity", .3).attr("r", radius).style("stroke-width", 1);
+      //
+      //     tip
+      //       .style("left", "-1000px")
+      //       .style("top", "-1000px");
+      //
+      //   });
+      //
+      // }
+      //
+      // function forceSim() {
+      //   var simulation = d3.forceSimulation(data)
+      //     .force("y", d3.forceY(function(d) {
+      //       return y(d.industry) + y.bandwidth() / 2;
+      //     }).strength(1))
+      //     .force("x", d3.forceX(function(d) {
+      //       return x();
+      //     }).strength(1))
+      //     .force("collide", d3.forceCollide(radius + 1))
+      //     .stop();
+      //
+      //   for (var i = 0; i < 200; ++i) simulation.tick();
+      // }
+
+    });
+  </script>
+</body>
+
+</html>

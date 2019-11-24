@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css?family=Cabin:300,400" rel='stylesheet' type='text/css'>
+<style> /* set the CSS */
+.line {
+  fill: none;
+  stroke: MidnightBlue;
+  stroke-width: 2px;
+}
+  .dot {
+    fill: IndianRed;
+  }
+  .area {
+    fill: none;
+  }
+  text.shadow {
+    stroke: white;
+    stroke-width: 4px;
+    opacity: 1
+  }
+  .grid line {
+    stroke: lightgrey;
+    stroke-opacity: 0.6;
+    shape-rendering: crispEdges
+  }
+  .grid path {
+    stroke-width: 0;
+  }
+</style>
+<body>
+
+<!-- load the d3.js library -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+// set the dimensions and margins of the graph
+var margin = {top: 40, right: 20, bottom: 30, left: 50},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+// parse the date / time
+// var parseTime = d3.timeParse("%d-%b-%y");
+// set the ranges
+var x = d3.scaleTime().range([0, width]);
+var y = d3.scaleLinear().range([height, 0]);
+// define the line
+
+var area = d3.area()
+    .x(function(d) { return x(d.date); })
+    .y0(height)
+    .y1(function(d) { return y(d.close); });
+var valueline = d3.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.close); });
+// append the svg obgect to the body of the page
+// appends a 'group' element to 'svg'
+// moves the 'group' element to the top left margin
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+  function make_x_gridlines() {
+    return d3.axisBottom(x)
+    	.ticks(8)
+  }
+  function make_y_gridlines() {
+    return d3.axisLeft(y)
+    	.ticks(5)
+  }
+// Get the data
+d3.tsv("linedata.tsv", function(error, data) {
+  if (error) throw error;
+  // format the data
+  data.forEach(function(d) {
+      // d.date = d.date;
+      d.close = +d.close;
+  });
+  // Scale the range of the data
+  x.domain(d3.extent(data, function(d) { return d.date; }));
+  y.domain([0, d3.max(data, function(d) { return d.close; })]);
+
+  svg.append("path")
+       .data([data])
+       .attr("class", "area")
+       .attr("d", area);
+  // Add the valueline path.
+  svg.append("path")
+      .data([data])
+      .attr("class", "line")
+  		.style("stroke-dotarray", ("3,3"))
+      .attr("d", valueline);
+
+  svg.selectAll("dot")
+  		.data(data)
+  	.enter().append("circle")
+  		.attr("class", "dot")
+  		.attr("r",5)
+  		.attr("cx", function(d) { return x(d.date); })
+  		.attr("cy", function(d) { return y(d.close); });
+
+
+
+  // Add the X Axis
+  svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+  // Add the Y Axis
+  svg.append("g")
+      .call(d3.axisLeft(y));
+
+  svg.append("text")
+  		.attr("x",width/2)
+  		.attr("y", 0 - margin.top/2)
+  		.attr("text-anchor", "middle")
+  		.style("font","24px cabin")
+  		.style("text-decoration","underline")
+  		.attr("class","shadow")
+  		.text("Line Graph Data with Area");
+  svg.append("text")
+  		.attr("x",width/2)
+  		.attr("y", 0 - margin.top/2)
+  		.attr("text-anchor", "middle")
+  		.style("font","24px cabin")
+  		.style("text-decoration","underline")
+  		.text("Line Graph Data with Area");
+
+  svg.append("g")
+  		.attr("class","grid")
+  		.attr("transform","translate(0," + height + ")")
+  		.style("stroke-dasharray",("3,3"))
+  		.call(make_x_gridlines()
+            .tickSize(-height)
+            .tickFormat("")
+         )
+  svg.append("g")
+  		.attr("class","grid")
+  		.style("stroke-dasharray",("3,3"))
+  		.call(make_y_gridlines()
+            .tickSize(-width)
+            .tickFormat("")
+         )
+});
+</script>
+</body>

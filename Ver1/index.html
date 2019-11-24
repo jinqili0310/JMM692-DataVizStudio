@@ -5,17 +5,18 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://rawgit.com/alvarotrigo/fullPage.js/dev/src/fullpage.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <title>Ver1</title>
 </head>
 
-<body>
+<body id="bootstrap-overrides">
   <div id="fullpage">
 
     <!-- first page -->
 
     <div class="section">
 
-      <section class="team">
+      <section class="team" style="margin-top: 10vh;">
         <div class="grid-xlarge">
           <div class="team__container">
             <article>
@@ -23,13 +24,16 @@
                 <div class="team__img-container">
                   <span class="preloader"></span>
                   <figure class="team__img">
-                    <img class="absolute-bg" src="https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/captainAmerica.png" alt="" />
-                    <img class="absolute-bg" src="https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/hulk.png" alt="" />
-                    <img class="absolute-bg" src="https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/ironMan.png" alt="" />
-                    <img class="absolute-bg" src="https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/spiderMan.png" alt="" />
-                    <img class="absolute-bg" src="https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/starLord.png" alt="" />
-                    <img class="absolute-bg" src="https://kikijinqili.github.io/Marvel_DataViz/Ver1/Assets/thor.png" alt="" />
-                    <!-- <img class="absolute-bg" src="../Assets/captainAmerica.png" alt=""/> -->
+                    <img class="absolute-bg" src="../Assets/antMan.png" alt=""/>
+                    <img class="absolute-bg" src="../Assets/blackPanther.png" alt=""/>
+                    <img class="absolute-bg" src="../Assets/captainAmerica.png" alt="" />
+                    <img class="absolute-bg" src="../Assets/captainMarvel.png" alt=""/>
+                    <img class="absolute-bg" src="../Assets/doctorStrange.png" alt=""/>
+                    <img class="absolute-bg" src="../Assets/hulk.png" alt="" />
+                    <img class="absolute-bg" src="../Assets/ironMan.png" alt="" />
+                    <img class="absolute-bg" src="../Assets/spiderMan.png" alt="" />
+                    <img class="absolute-bg" src="../Assets/starLord.png" alt="" />
+                    <img class="absolute-bg" src="../Assets/thor.png" alt="" />
                   </figure>
                 </div>
               </a>
@@ -37,6 +41,9 @@
           </div>
         </div>
       </section>
+      <div>
+        <h5 style="color: grey; margin-top: 12vh;">SCROLL DOWN</h5>
+      </div>
 
     </div>
 
@@ -44,6 +51,7 @@
 
     <div class="section">
 
+<div style="margin-top: 3vh;">
       <marquee direction="right" scrollamount="16">
         <h2>WHO IS</h2>
       </marquee>
@@ -59,6 +67,11 @@
       <marquee direction="left" scrollamount="17">
         <h2>IN MCU?</h2>
       </marquee>
+      </div>
+
+      <div>
+        <h5 style="color: grey; margin-top: 3vh;">SCROLL DOWN</h5>
+      </div>
 
     </div>
 
@@ -66,24 +79,194 @@
 
     <div class="section">
       <div class="page3">
-        <marquee direction="up" scrollamount="10" style="height: 100%;">
+        <!-- <marquee direction="up" scrollamount="10" style="height: 100%;"> -->
           <div id="floatText">
-            <h4>
-              Introduction to the project<br>
-              Introduction to the project<br>
-              Introduction to the project
-            </h4>
+            <p>
+              The project will explore the answer for “Who is the most <br>
+              popular superhero in MCU (Marvel Cinematic Universe)?” from <br>
+              several interesting perspectives. The metrics that will be used <br>
+              to define the answer include: <br>
+              1. Box office revenue of each movie; <br>
+              2. Twitter hashtag popularity; <br>
+              3. Google Trends; <br>
+              4. Scores of individual superhero movies on Rotten Tomatoes.
+            </p>
           </div>
-        </marquee>
+        <!-- </marquee> -->
+        <div>
+          <h5 style="color: grey; padding-top: 70vh;">SCROLL DOWN</h5>
+        </div>
 
       </div>
 
     </div>
-    <div class="section">Introduction to Characters</div>
-    <div class="section">Timeline</div>
-    <div class="section">Chart #1</div>
-    <div class="section">Chart #2</div>
-    <div class="section">Chart #3</div>
+
+    <!-- fourth page -->
+
+    <div class="section">
+
+      <div class="portraits">
+        <ul class="flex-container">
+          <li class="flex-item"><a href="#"><img class="portrait" src="../Assets/antMan.png" /></a></li>
+          <li class="flex-item"><a href="#"><img class="portrait" src="../Assets/blackPanther.png" /></a></li>
+          <li class="flex-item"><a href="#"><img class="portrait" src="../Assets/captainAmerica.png" /></a></li>
+          <li class="flex-item"><a href="#"><img class="portrait" src="../Assets/captainMarvel.png" /></a></li>
+          <li class="flex-item"><a href="#"><img class="portrait" src="../Assets/doctorStrange.png" /></a></li>
+          <li class="flex-item"><a href="#"><img class="portrait" src="../Assets/hulk.png" /></a></li>
+          <li class="flex-item"><a href="#"><img class="portrait" src="../Assets/ironMan.png" /></a></li>
+          <li class="flex-item"><a href="#"><img class="portrait" src="../Assets/spiderMan.png" /></a></li>
+          <li class="flex-item"><a href="#"><img class="portrait" src="../Assets/starLord.png" /></a></li>
+          <li class="flex-item"><a href="#"><img class="portrait" src="../Assets/thor.png" /></a></li>
+        </ul>
+      </div>
+
+      <div class="charIntro">
+        <div id="CAintro" class="container introContainer">
+          <div class="gifContainer">
+            <img class="charGif" src="../Assets/CA1.gif">
+          </div>
+          <div class="row">
+            <div class="col-sm-3 name">Captain America</div>
+            <div class="col-sm-9 paragraph my-auto">America’s World War II Super-Soldier continues his fight in the present as an Avenger and untiring sentinel of liberty.</div>
+          </div>
+        </div>
+
+        <div id="HKintro" class="container introContainer">
+          <div class="gifContainer">
+            <img class="charGif" src="../Assets/hulk.png">
+          </div>
+          <div class="row">
+            <div class="col-sm-3 name">Hulk</div>
+            <div class="col-sm-9 paragraph">Intro to Captain America</div>
+          </div>
+        </div>
+
+        <div id="IMintro" class="container introContainer">
+          <div class="gifContainer">
+            <img class="charGif" src="../Assets/ironMan.png">
+          </div>
+          <div class="row">
+            <div class="col-sm-3 name">Iron Man</div>
+            <div class="col-sm-9 paragraph">Intro to Captain America</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h5 style="color: grey; margin-top: 85vh;">SCROLL DOWN</h5>
+      </div>
+
+    </div>
+
+    <!-- fifth page -->
+
+    <div class="section" id="page5">
+
+<section class="timeline">
+  <div class="timeTitle">
+    <h4>Major Events Happened in MCU</h4>
+  </div>
+  <ol>
+    <li>
+      <div class="timeItem">
+        <time>Big Bang – 1939</time>Poignant events in the MCU, such as the birth of the Infinity Stones and vibranium landing on Earth, occur long before any of the movies in the MCU actually take place. But they have a lasting impact on overarching stories and events that take place in individual films.
+      </div>
+    </li>
+    <li>
+      <div class="timeItem">
+        <time>1940 – 1950</time>Steve Rogers becomes Captain America, an event that jumpstarts the formation of the Strategic Homeland Intervention Enforcement and Logistics Division (S.H.I.E.L.D.) and, eventually, the Avengers.
+      </div>
+    </li>
+    <li>
+      <div class="timeItem">
+        <time>1951 – 1990</time>Many events are set in motion that test the heroes in the future, such as Ego finding Peter Quill's mother on Earth, Janet van Dyne disappearing in the Quantum Realm, and Carol Danvers gaining her powers.
+      </div>
+    </li>
+    <li>
+      <div class="timeItem">
+        <time>1991 – 2000</time>The '90s were a turning point for the stories yet to come of Iron Man, Black Panther, and Captain America. It's also when Carol Danvers becomes Captain Marvel.
+      </div>
+    </li>
+    <li>
+      <div class="timeItem">
+        <time>2001 – 2009</time>Tony Stark becomes Iron Man and Bruce Banner becomes the Hulk throughout the mid-to-late 2000s, which prompts the reveal of other heroes.
+      </div>
+    </li>
+    <li>
+      <div class="timeItem">
+        <time>2008 – 2011</time>Thor is put through challenges that make him the hero he is today, like his first visit to Earth. Vanko's deportation comes back to haunt Tony Stark, as his son becomes the villain Whiplash with a vendetta against the Stark family.
+      </div>
+    </li>
+    <li>
+      <div class="timeItem">
+        <time>2011 – 2012</time>The Avengers make their debut and halt an alien invasion led by Loki. The invasion sets in motion many of the events of the present-day MCU. Thanos makes his on-screen debut.
+      </div>
+    </li>
+    <li>
+      <div class="timeItem">
+        <time>2013</time>The Reality Stone is put in safe keeping ... for now.
+      </div>
+    </li>
+    <li>
+      <div class="timeItem">
+        <time>2014 – 2017</time>A turning point for S.H.I.E.L.D. and the Guardians of the Galaxy. Captain America and Black Widow discover that S.H.I.E.L.D. is compromised, while Peter Quill finds his father, Ego.
+      </div>
+    </li>
+    <li>
+      <div class="timeItem">
+        <time>2015 – 2016</time>The Avengers face Ultron. Elsewhere, future allies experience their powers for the first time.
+      </div>
+    </li>
+    <li>
+      <div class="timeItem">
+        <time>2016 – 2018</time>The Avengers are torn apart when they pick sides between Captain America and Iron Man over whether they should be forced to work for the government. Black Panther and Spider-Man make their debut in the ensuing confrontation.
+      </div>
+    </li>
+    <li>
+      <div class="timeItem">
+        <time>2017 – 2018</time>Doctor Strange safeguards the Time Stone, Asgard is destroyed, and Janet van Dyne is rescued.
+      </div>
+    </li>
+    <li>
+      <div class="timeItem">
+        <time>2018</time>Thanos retrieves all six Infinity Stones and successfully wipes out half of humanity. But Nick Fury has a back-up plan.
+      </div>
+    </li>
+    <li></li>
+  </ol>
+
+  <div class="arrows">
+    <button class="arrow arrow__prev disabled" disabled>
+      <img src="../Assets/arrow-left.png" alt="prev timeline arrow">
+    </button>
+    <button class="arrow arrow__next">
+      <img src="../Assets/arrow-right.png" alt="next timeline arrow">
+    </button>
+  </div>
+</section>
+<div>
+  <h5 style="color: grey; margin-top: 1vh;">SCROLL DOWN</h5>
+</div>
+    </div>
+
+    <!-- sixth page -->
+
+    <div class="section">
+      <img src="../Assets/fake1.png" alt="">
+
+    </div>
+
+    <!-- seventh page -->
+
+    <div class="section"><img src="../Assets/fake2.png" alt="">
+
+    </div>
+
+    <!-- eighth page -->
+
+    <div class="section"><img src="../Assets/fake3.png" alt="">
+
+    </div>
+
   </div>
 </body>
 
