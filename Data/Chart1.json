@@ -1,0 +1,72 @@
+[
+  {
+    "id": "ironMan",
+    "character": "Iron Man",
+    "boxOffice": "13353082958",
+    "rottenTomatoes": "88",
+    "image_url": "../Assets/ironMan0.png"
+  },
+  {
+    "id": "hulk",
+    "character": "Hulk",
+    "boxOffice": "10659322938",
+    "rottenTomatoes": "85",
+    "image_url": "../Assets/hulk0.png"
+  },
+  {
+    "id": "thor",
+    "character": "Thor",
+    "boxOffice": "10954580343",
+    "rottenTomatoes": "87",
+    "image_url": "../Assets/thor0.png"
+  },
+  {
+    "id": "captainAmerica",
+    "character": "Captain America",
+    "boxOffice": "12027711161",
+    "rottenTomatoes": "90",
+    "image_url": "../Assets/captainAmerica0.png"
+  },
+  {
+    "id": "starLord",
+    "character": "Star Lord",
+    "boxOffice": "6634240074",
+    "rottenTomatoes": "85",
+    "image_url": "../Assets/starLord0.png"
+  },
+  {
+    "id": "antMan",
+    "character": "Ant-Man",
+    "boxOffice": "3995525014",
+    "rottenTomatoes": "88",
+    "image_url": "../Assets/antMan0.png"
+  },
+  {
+    "id": "doctorStrange",
+    "character": "Doctor Strange",
+    "boxOffice": "7046496646",
+    "rottenTomatoes": "92",
+    "image_url": "../Assets/doctorStrange0.png"
+  },
+  {
+    "id": "spiderMan",
+    "character": "Spider-Man",
+    "boxOffice": "8172848621",
+    "rottenTomatoes": "91",
+    "image_url": "../Assets/spiderMan0.png"
+  },
+  {
+    "id": "blackPanther",
+    "character": "Black Panther",
+    "boxOffice": "7501767720",
+    "rottenTomatoes": "93",
+    "image_url": "../Assets/blackPanther0.png"
+  },
+  {
+    "id": "captainMarvel",
+    "character": "Captain Marvel",
+    "boxOffice": "3924542560",
+    "rottenTomatoes": "86",
+    "image_url": "../Assets/captainMarvel0.png"
+  }
+]

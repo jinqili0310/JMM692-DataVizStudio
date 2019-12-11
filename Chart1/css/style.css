@@ -1,4 +1,4 @@
-#chart-area svg {
+#chart1 svg {
 	margin-left: auto;
     margin-right: auto;
     display: block;
@@ -20,7 +20,11 @@ body {
 
 div.tooltip {
     position: absolute;
-    font: 12px sans-serif;
     background: black;
     pointer-events: none;
+}
+
+.container {
+	margin: 0;
+	padding: 0;
 }

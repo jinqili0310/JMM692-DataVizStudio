@@ -7,48 +7,196 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Custom styling -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
 </head>
 
 <body>
 
-
-
-
-    <!-- <nav class="navbar navbar-default">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img id="logo" src="img/logo.png"></a>
-        </div>
-    </nav> -->
-
     <!-- Bootstrap grid setup -->
     <div class="container">
         <div class="row">
-          <!-- <div id="option">
-              <input name="updateButton"
-                     type="button"
-                     value="Sort by Movie"
-                     onclick="updateData()" />
-              <input name="revertButton"
-                     type="button"
-                     value="Sort by Character"
-                     onclick="revertData()" />
-          </div> -->
+            <div id="chart1">
 
-
-            <div id="chart-area"></div>
+            </div>
         </div>
     </div>
 
 <!-- External JS libraries -->
+
 <script src="https://d3js.org/d3.v5.min.js"></script>
 
 <script src="https://d3js.org/d3-color.v1.min.js"></script>
 <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
+<style media="screen">
+#chart1 svg {
+  margin-left: auto;
+    margin-right: auto;
+    display: block;
+    color: black;
+}
+
+body {
+  background: white;
+}
+
+#option {
+  margin: 60px;
+}
+
+.navbar-brand {
+  height: 60px;
+  padding: 5px 0px;
+}
+
+div.tooltip {
+    position: absolute;
+    background: black;
+    pointer-events: none;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+</style>
+<script type="text/javascript">
+// set the dimensions and margins of the graph
+var margin = {
+    top: 50,
+    right: 30,
+    bottom: 120,
+    left: 210
+  },
+  width = window.innerWidth - margin.left - margin.right,
+  height = window.innerHeight - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#chart1")
+  .append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform",
+    "translate(" + margin.left + "," + margin.top + ")");
+
+//Chart1-1
+
+var xLabel = svg.append("text")
+  .attr("y", height + 50)
+  .attr("x", width / 2)
+  .attr("font-size", "20px")
+  .attr("text-anchor", "middle")
+  .text("Median Score on Rotten Tomatoes (%)");
+
+var yLabel = svg.append("text")
+  .attr("transform", "rotate(-90)")
+  .attr("y", -150)
+  .attr("x", -400)
+  .attr("font-size", "20px")
+  .attr("text-anchor", "middle")
+  .text("Box Office in Total ($)");
+
+//Read the data
+d3.json("data/Chart1-1.json").then(function(data) {
+  console.log(data);
+
+  // Add X axis
+  var x = d3.scaleLinear()
+    .domain([80, 100])
+    .range([0, width]);
+  svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x));
+
+  // Add Y axis
+  var y = d3.scaleLinear()
+    .domain([2000000000, 16000000000])
+    .range([height, 0]);
+  svg.append("g")
+    .call(d3.axisLeft(y));
+
+  // Add the tooltip container to the vis container
+  // it's invisible and its position/contents are defined during mouseover
+  var tooltip = d3.select("#chart-area").append("div")
+    .attr("class", "tooltip")
+    .style("background", "white")
+    .style("border", "solid")
+    .style("border-width", "1px")
+    .style("border-radius", "5px")
+    .style("color", "black")
+    .style("opacity", 0);
+
+  // tooltip mouseover event handler
+  var tipMouseover = function(d) {
+    var color = colorScale(d.character);
+    var html = "<span style='color:" + color + ";'> <b>" + d.character + "</span><br/> </b>" +
+      "Median Score on Rotten Tomatoes: " + "<b>" +d.rottenTomatoes + "% </b>" +"<br/>" +
+      "Box Office in Total: <b>$" + d.boxOffice + "</b> </span>";
+
+    tooltip.html(html)
+      .style("left", (d3.event.pageX + 15) + "px")
+      .style("top", (d3.event.pageY - 28) + "px")
+      .transition()
+      .duration(200) // ms
+      .style("opacity", 1); // started as 0!
+
+  };
+  // tooltip mouseout event handler
+  var tipMouseout = function(d) {
+    tooltip.transition()
+      .duration(300) // ms
+      .style("opacity", 0); // don't care about position!
+  };
+
+var colorScale = d3.scaleOrdinal(d3.schemeSet3);
+
+var node = svg.selectAll("g.node")
+    .data(data, function(d) { return d.character; });
+
+var nodeEnter = node.enter()
+    .append("g")
+    .attr("class", "node");
+
+var defs = nodeEnter.append("defs");
+
+defs.append('pattern')
+  .attr("id", function(d) { return "image"+ d.id;}  )
+  .attr("width", 60)
+  .attr("height", 60)
+  .append("image")
+  .attr("xlink:href", function(d) { return d.image_url;})
+  .attr("width", 60)
+  .attr("height", 60);
+
+  nodeEnter.append("circle")
+      .attr("cx", function(d) {
+        return x(d.rottenTomatoes);
+      })
+      .attr("cy", function(d) {
+        return y(d.boxOffice);
+      })
+      .style("stroke", function(d) {
+        return colorScale(d.character);
+      })
+      .style("stroke-width", 5)
+      .attr("fill",function(d) {
+        return "url(#image"+ d.id +")";
+      })
+      .attr("r", 30)
+      .on("mouseover", tipMouseover)
+      .on("mouseout", tipMouseout);
+
+  return svg.node();
+
+});
+
+</script>
+
 <!-- Custom JS -->
-<script src="js/main.js"></script>
+<!-- <script src="js/main.js"></script> -->
 
 </body>
 </html>

@@ -16,6 +16,7 @@
   font-family: "Avenir Next Regular";
   margin: 0;
   color: white;
+  z-index: 1;
 }
 
 #bootstrap-overrides p {
@@ -309,6 +310,7 @@ $font-small: 0.9em;
 
 #bootstrap-overrides .team {
   width: 100%;
+  z-index: 0;
 
   padding: {
     right: 1em;
@@ -411,29 +413,61 @@ $font-small: 0.9em;
   background-size: cover;
 }
 
-#floatText {
+#bootstrap-overrides .floatText {
   color: white;
-  text-align: left;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 75vh;
   width: 50%;
-  position: relative;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 25%;
+  top: 25%;
   z-index: 1;
   /* bottom: 8px; */
+  /* position: absolute; */
+/** This css rule will make the object
+move smoothly and animated **/
+	-webkit-transition: all 4s ease-in-out;
+    -moz-transition: all 4s ease-in-out;
+    -o-transition: all 4s ease-in-out;
 }
 
-#floatText p {
+#page1 {
+  z-index: 10;
+}
+
+#page3 {
+  z-index: 10;
+}
+
+#bootstrap-overrides .floatDiv:hover .floatText {
+  transform: translate(0,-650px);
+	-webkit-transform: translate(0,-650px);
+	-o-transform: translate(0,-650px);
+	-moz-transform: translate(0,-650px);
+}
+
+#scrollBottom {
+  display: none;
+}
+
+#bootstrap-overrides .floatDiv:hover #scrollBottom {
+  display: block;
+}
+
+#bootstrap-overrides .floatText p {
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.8);
   font-size: 1.8rem;
-  padding: 4px;
+  padding: 30px;
 }
 
 @import "compass/css3";
 
 #bootstrap-overrides .flex-container {
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   list-style: none;
 
   display: -webkit-box;
@@ -452,30 +486,46 @@ $font-small: 0.9em;
 #bootstrap-overrides .flex-item {
   position: relative;
   top: 0;
-  padding: 0;
-  width: 10%;
+  padding: 0 4.6vw 0 4.6vw;
+  width: 6vw;
   height: auto;
+  max-height: 6vh;
   margin-top: 0;
 }
 
 #bootstrap-overrides .portrait {
   max-width: 10vw;
   max-height: auto;
-  width: auto;
+  width: 6vw;
   height: auto;
   margin: 0;
 }
 
+#bootstrap-overrides .row {
+  margin: 0;
+  padding: 0;
+}
+
 #bootstrap-overrides .name {
   color: white;
-  font-size: 4rem;
+  font-size: 2rem;
+  text-align: left !important;
+  margin: 0;
+  padding: 5vh 0 0 0;
+  font-weight: bold;
 }
 
 #bootstrap-overrides .paragraph {
   color: white;
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding: 0 10vh;
   text-align: left;
+  margin: 0 !important;
+  padding: 5vh 0 0 0;
+}
+
+#bootstrap-overrides .indchart {
+  padding: 5vh 0 0 0;
 }
 
 #bootstrap-overrides .introContainer {
@@ -484,12 +534,14 @@ $font-small: 0.9em;
   background-position: 50%;
   overflow: hidden;
   height: 80vh;
+  margin: 10vh auto;
 }
 
 #bootstrap-overrides .charGif {
   margin-bottom: 1vh;
-  max-height: 33vh;
-  height: auto;
+  height: 30vh !important;
+  width: auto;
+  margin-top: 0 !important;
 }
 
 #bootstrap-overrides .charIntro {
@@ -720,4 +772,185 @@ $font-small: 0.9em;
 
 #CAintro .charGif {
   margin: 4vw auto 2vw auto;
+}
+
+#bootstrap-overrides .chart1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#bootstrap-overrides .tick {
+  font-family: "Avenir Next Regular";
+  font-size: 0.7rem;
+}
+
+#bootstrap-overrides .tooltip {
+  font-family: "Avenir Next Regular";
+  font-size: 1.2rem;
+}
+
+.d3_timeseries.axis path, .d3_timeseries.axis line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.d3_timeseries.mousevline {
+  fill: none;
+  stroke: #666;
+  stroke-dasharray: 3, 6;
+  stroke-width: 1;
+}
+
+.d3_timeseries.mousevline-text {
+  font-family: "Avenir Next Regular";
+  font-size: 0.7rem;
+}
+
+.d3_timeseries.axis {
+  font-family: "Avenir Next Regular";
+  font-size: 0.7rem;
+}
+
+.d3_timeseries.tooltip {
+  position: absolute;
+  text-align: left;
+  padding: 2px;
+  background: white;
+  border: solid #888 1px;
+  border-radius: 4px;
+  font-family: "Avenir Next Regular";
+  font-weight: bold;
+}
+
+.d3_timeseries.tooltip h4 {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-family: "Avenir Next Regular";
+  font-size: 1.2rem !important;
+  font-weight: bold;
+}
+
+.d3_timeseries.axis text {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: default
+}
+
+#chart3 text {
+  fill: rgba(255, 255, 255, .6);
+  transition: .2s;
+}
+
+#chart3 g:hover text {
+  fill: rgba(255, 255, 255, 1)
+}
+
+#chart3 {
+  margin: 0 auto;
+}
+
+#porbg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+#maintitle {
+  z-index: 0;
+  position: relative;
+}
+
+#bootstrap-overrides div.timeItem img {
+  display: none;
+}
+
+#bootstrap-overrides div.timeItem:hover img {
+  display: block;
+}
+
+#bootstrap-overrides div.timeItem:hover h6 {
+  display: none;
+}
+
+#bootstrap-overrides .chartText p {
+  border: black;
+  background: white;
+  color: black;
+}
+
+#bootstrap-overrides .chartText {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* #bootstrap-overrides .chartPage {
+  width: 60vw;
+  height: auto;
+} */
+
+#bootstrap-overrides .btn {
+  margin: 0;
+  padding: 0;
+  background: rgb(255,255,255,0.6);
+  border-radius: 50px;
+}
+
+#bootstrap-overrides .btn:hover {
+  background: rgb(255,255,255,0.8);
+}
+
+#bootstrap-overrides .btn:focus {
+  background: rgb(255,255,255,1);
+}
+
+/* #chart1 {
+  width: 60vw;
+  height: auto;
+  left: 0;
+  margin: 0;
+  padding: 0;
+} */
+
+#bootstrap-overrides .chartOne {
+  width: 60vw;
+  height: auto;
+  left: 0;
+  margin: 0 20px;
+  padding: 0;
+}
+
+#bootstrap-overrides .chartText h4 {
+  font-weight: bold;
+  padding-top: 4vh;
+  color: #a87272;
+  font-size: 2rem;
+}
+
+#bootstrap-overrides .chartText h6 {
+  text-align: justify;
+  font-size: 1.2rem;
+  padding-top: 2vh;
+  line-height: 1.5rem;
+  padding-left: 1vw;
+}
+
+#bootstrap-overrides .chart1Text {
+  padding-top: 18vh !important;
+}
+
+#bootstrap-overrides .chart2Text {
+  padding-top: 10vh !important;
+}
+
+#bootstrap-overrides .chart3Text {
+  padding-top: 18vh !important;
 }

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>D3: A simple packed Bubble Chart</title>
+
+  <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+
+  <style type="text/css">
+    /* No style rules here yet */
+    text {
+      fill: rgba(255, 255, 255, .6);
+      transition: .2s;
+    }
+
+    g:hover text {
+      fill: rgba(255, 255, 255, 1)
+    }
+  </style>
+</head>
+
+<body>
+  <script type="text/javascript">
+    dataset = {
+      "children": [
+      {
+    "Name": "#ironman",
+    "Count": 1690000
+  },
+  {
+    "Name": "#hulk",
+    "Count": 737200
+  },
+  {
+    "Name": "#thor",
+    "Count": 1420000
+  },
+  {
+    "Name": "#captainamerica",
+    "Count": 1890000
+  },
+  {
+    "Name": "#starlord",
+    "Count": 528300
+  },
+  {
+    "Name": "#antman",
+    "Count": 1030000
+  },
+  {
+    "Name": "#doctorstrange",
+    "Count": 1200000
+  },
+  {
+    "Name": "#spiderman",
+    "Count": 4600000
+  },
+  {
+    "Name": "#blackpanther",
+    "Count": 4280000
+  },
+  {
+    "Name": "#captainmarvel",
+    "Count": 2290000
+  }
+      ]
+    };
+
+    var diameter = 800;
+    // var color = d3.scaleOrdinal(d3.schemeCategory20);
+    var color = d3.scaleOrdinal(d3.schemePaired);
+    // ["#4e79a7","#f28e2c","#e15759","#76b7b2","#59a14f","#edc949","#af7aa1","#ff9da7","#9c755f","#bab0ab"];
+
+    var bubble = d3.pack(dataset)
+      .size([diameter, diameter])
+      .padding(1.5);
+
+    var svg = d3.select("body")
+      .append("svg")
+      .attr("width", diameter)
+      .attr("height", diameter)
+      .attr("class", "bubble");
+
+    var nodes = d3.hierarchy(dataset)
+      .sum(function(d) {
+        return d.Count;
+      });
+
+    var node = svg.selectAll(".node")
+      .data(bubble(nodes).descendants())
+      .enter()
+      .filter(function(d) {
+        return !d.children
+      })
+      .append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) {
+        return "translate(" + d.x + "," + d.y + ")";
+      });
+
+    // node.append("title")
+    //     .text(function(d) {
+    //         return d.Name + ": " + d.Count;
+    //     });
+
+    node.append("circle")
+      .attr("r", function(d) {
+        return d.r;
+      })
+      .style("fill", function(d, i) {
+        return color(i);
+      });
+
+    node.append("text")
+      .attr("dy", "-1.6em")
+      .style("text-anchor", "middle")
+      .text(function(d) {
+        return "Hashtag:";
+      })
+      .attr("font-size", function(d) {
+        return d.r / 6;
+      });
+
+    node.append("text")
+      .attr("dy", "-0.3em")
+      .style("text-anchor", "middle")
+      .text(function(d) {
+        return d.data.Name.substring(0, d.r / 3);
+      })
+      .attr("font-weight", "bold")
+      .attr("font-size", function(d) {
+        return d.r / 6;
+      });
+
+    node.append("text")
+      .attr("dy", "1.1em")
+      .style("text-anchor", "middle")
+      .text(function(d) {
+        return "Twitter Posts Estimate:";
+      })
+      .attr("font-size", function(d) {
+        return d.r / 6;
+      });
+
+    node.append("text")
+      .attr("dy", "2.4em")
+      .style("text-anchor", "middle")
+      .text(function(d) {
+        return d.data.Count;
+      })
+      .attr("font-weight", "bold")
+      .attr("font-size", function(d) {
+        return d.r / 6;
+      });
+
+    d3.select(self.frameElement)
+      .style("height", diameter + "px");
+  </script>
+</body>
+
+</html>

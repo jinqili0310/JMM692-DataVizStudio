@@ -1,15 +1,15 @@
 // set the dimensions and margins of the graph
 var margin = {
-    top: 30,
+    top: 50,
     right: 30,
     bottom: 120,
-    left: 120
+    left: 210
   },
-  width = 1200 - margin.left - margin.right,
-  height = 800 - margin.top - margin.bottom;
+  width = window.innerWidth - margin.left - margin.right,
+  height = window.innerHeight - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("#chart-area")
+var svg = d3.select("#chart1")
   .append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
@@ -28,8 +28,8 @@ var xLabel = svg.append("text")
 
 var yLabel = svg.append("text")
   .attr("transform", "rotate(-90)")
-  .attr("y", -100)
-  .attr("x", -170)
+  .attr("y", -150)
+  .attr("x", -400)
   .attr("font-size", "20px")
   .attr("text-anchor", "middle")
   .text("Box Office in Total ($)");
@@ -57,16 +57,19 @@ d3.json("data/Chart1-1.json").then(function(data) {
   // it's invisible and its position/contents are defined during mouseover
   var tooltip = d3.select("#chart-area").append("div")
     .attr("class", "tooltip")
-    .style("background", "grey")
+    .style("background", "white")
+    .style("border", "solid")
+    .style("border-width", "1px")
+    .style("border-radius", "5px")
     .style("color", "black")
     .style("opacity", 0);
 
   // tooltip mouseover event handler
   var tipMouseover = function(d) {
     var color = colorScale(d.character);
-    var html = "<span style='color:" + color + ";'> <b>" + d.character + "</span><br/>" +
-      "Median Score on Rotten Tomatoes: " + d.rottenTomatoes + "%" +"<br/>" +
-      "Box Office in Total: $" + d.boxOffice + "</span>";
+    var html = "<span style='color:" + color + ";'> <b>" + d.character + "</span><br/> </b>" +
+      "Median Score on Rotten Tomatoes: " + "<b>" +d.rottenTomatoes + "% </b>" +"<br/>" +
+      "Box Office in Total: <b>$" + d.boxOffice + "</b> </span>";
 
     tooltip.html(html)
       .style("left", (d3.event.pageX + 15) + "px")

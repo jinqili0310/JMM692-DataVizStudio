@@ -1,0 +1,68 @@
+body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
+
+.chart-background {
+  opacity: 0;
+}
+
+div.tooltip{
+  position: absolute;
+  text-align: center;
+  padding: 5px;
+  font: 12px sans-serif;
+  background-color: white;
+  border: 1px #b7b7b7 solid;
+  pointer-events: none;
+  width: 100px;
+}
+
+.dot {
+  fill: #7ff4a8;
+  stroke: black;
+  stroke-width: 0.75;
+}
+
+.active {
+  fill: blue;
+}
+
+.dot1 {
+  fill: #ffb4d9;
+  stroke: black;
+  stroke-width: 0.75;
+}
+
+.dot2 {
+  fill: #90bcf9;
+  stroke: black;
+  stroke-width: 0.75;
+}
+
+.axis-label {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.sub-title {
+  font-weight: 700;
+}
+
+.grid-line {
+  stroke: black;
+  opacity: 0.2;
+  stroke-dasharray: 1,2;
+}
+
+text {
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+.dot-label {
+  font-weight: 700;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+}
