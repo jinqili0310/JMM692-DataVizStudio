@@ -1,5 +1,6 @@
 // Initiate scroll page
 new fullpage("#fullpage", {
+  licenseKey: 'CZ6L9-N4KWJ-COK88-4RJQ8-EAKNL'
   lockAnchors: false,
   anchors: ["1", "2", "3", "4", "5", "6", "7", "8"],
   navigation: true,
